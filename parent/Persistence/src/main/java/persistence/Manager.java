@@ -1,5 +1,10 @@
 package persistence;
 
+import persistence.PO.ClientPO;
+import persistence.PO.ContractPO;
+import persistence.PO.OptionPO;
+import persistence.PO.TarifPO;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
@@ -37,8 +42,6 @@ public class Manager {
             e.printStackTrace();
         }
         tx.commit();
-
-//        test.findAllClients();
 
         System.out.println(".. done");
     }
