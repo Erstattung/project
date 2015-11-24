@@ -3,6 +3,10 @@
 
     <persistence-unit name="PersistenceUnit" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <class>persistence.PO.ClientPO</class>
+        <class>persistence.PO.ContractPO</class>
+        <class>persistence.PO.OptionPO</class>
+        <class>persistence.PO.TarifPO</class>
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLInnoDBDialect"/>
             <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/all_data"/>

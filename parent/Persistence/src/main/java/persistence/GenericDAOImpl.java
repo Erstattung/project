@@ -1,11 +1,10 @@
 package persistence;
 
-import persistence.GenericDAOInterface;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.util.List;
 
 /**
@@ -16,12 +15,16 @@ public abstract class GenericDAOImpl<T> implements GenericDAOInterface<T> {
     protected Class<T> entityClass;
     @PersistenceContext
     protected EntityManager entityManager;
-    public GenericDAOImpl() {
-        ParameterizedType genericSuperclass = (ParameterizedType) getClass()
-                .getGenericSuperclass();
-        this.entityClass = (Class<T>) genericSuperclass
-                .getActualTypeArguments()[0];
+    public GenericDAOImpl(EntityManager entityManager) {
+        this.entityManager = entityManager;
     }
+
+    public GenericDAOImpl() {
+        Type t = getClass().getGenericSuperclass();
+        ParameterizedType pt = (ParameterizedType) t;
+        t = (Class) pt.getActualTypeArguments()[0];
+    }
+
 
     @Override
     public T create(T t) {
@@ -42,13 +45,13 @@ public abstract class GenericDAOImpl<T> implements GenericDAOInterface<T> {
     }
 
     @Override
-    public T getById(Long id) {
-        return (T) entityManager.find(entityClass, id);
+    public T getById(Long id, Class xx) {
+        return (T) entityManager.find(xx, id);
     }
 
     @Override
-    public List<T> getAll() {
-        TypedQuery<T> query = entityManager.createQuery("from " + entityClass.getName(), entityClass);
+    public List<T> getAll(Class xx) {
+        TypedQuery<T> query = entityManager.createQuery("from " + xx.getName(), xx);
         return query.getResultList();
     }
 }

@@ -1,14 +1,23 @@
 package persistence.Implementation;
 
-import persistence.DAO.ClientDAO;
 import persistence.GenericDAOImpl;
+import persistence.HibernateUtil;
 import persistence.PO.ClientPO;
+
+import javax.persistence.EntityManager;
+
 
 /**
  * Created by echerkas on 24.11.2015.
  */
-public class ClientDAOImpl extends GenericDAOImpl<ClientPO> implements ClientDAO {
+public class ClientDAOImpl extends GenericDAOImpl<ClientPO> {
+
+    ClientDAOImpl (EntityManager entityManager) {
+        super(entityManager);
+    }
+
     public ClientPO findByName(String name) {
+        HibernateUtil.beginTransaction();
         return entityManager.createQuery("SELECT c from ClientPO c WHERE " +
                 "c.name = :name", ClientPO.class)
                 .setParameter("name", name).getSingleResult();
@@ -31,4 +40,8 @@ public class ClientDAOImpl extends GenericDAOImpl<ClientPO> implements ClientDAO
                 " WHERE c.number = :number", ClientPO.class).
                 setParameter("number", number).getSingleResult();
     }
+
+    public ClientPO getById(Long id, ClientPO xx) {
+        return entityManager.find(entityClass, id);
     }
+}

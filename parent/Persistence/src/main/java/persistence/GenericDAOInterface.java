@@ -13,7 +13,7 @@ public interface GenericDAOInterface <T>{
 
         void remove (T t);
 
-        T getById(Long id);
+        T getById(Long id, Class xx);
 
-        List<T> getAll();
+        List<T> getAll(Class xx);
 }
