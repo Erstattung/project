@@ -20,7 +20,7 @@ public class Main {
 //        New client name in DB
 
         ClientPO notemployee = new ClientPO();
-        notemployee.setName("SecondPerson");
+        notemployee.setName("thirdPerson");
         System.out.println("COMIITING");
         em.persist(notemployee);
 //        em.getTransaction().commit();
@@ -29,8 +29,8 @@ public class Main {
         //New Tarif in DB
 
         TarifPO newTarif = new TarifPO();
-        newTarif.setName("MoreTarif");
-        newTarif.setPrice(66.6);
+        newTarif.setName("AnotherTarif");
+        newTarif.setPrice(12.00);
         System.out.println("COMIITING");
         em.persist(newTarif);
 //        em.getTransaction().commit();
@@ -41,7 +41,7 @@ public class Main {
         ContractPO newContract = new ContractPO();
         newContract.getClient();
         newContract.setClient(notemployee);
-        newContract.setNumber("666-666-666");
+        newContract.setNumber("666-333-666");
         newContract.getTarif();
         newContract.setTarif(newTarif);
         System.out.println("COMIITING");

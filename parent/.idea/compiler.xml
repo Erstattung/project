@@ -17,11 +17,18 @@
       <profile default="true" name="Default" enabled="false">
         <processorPath useClasspath="true" />
       </profile>
+      <profile default="false" name="Annotation profile for mobile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="mobile" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Mobile" target="1.7" />
+      <module name="mobile" target="1.7" />
       <module name="parent" target="1.7" />
-      <module name="Persistence" target="1.7" />
+      <module name="persistence" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
