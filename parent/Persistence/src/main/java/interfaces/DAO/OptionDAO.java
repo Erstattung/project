@@ -1,7 +1,7 @@
-package persistence.DAO;
+package interfaces.DAO;
 
-import persistence.GenericDAOInterface;
-import persistence.PO.OptionPO;
+import interfaces.GenericDAOInterface;
+import interfaces.PO.OptionPO;
 
 /**
  * Created by echerkas on 24.11.2015.

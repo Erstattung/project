@@ -1,23 +1,22 @@
-package persistence.Implementation;
+package interfaces.Implementation;
 
-import persistence.GenericDAOImpl;
-import persistence.HibernateUtil;
-import persistence.PO.ClientPO;
+import interfaces.GenericDAOImpl;
+import interfaces.PO.ClientPO;
 
-import javax.persistence.EntityManager;
+import java.util.List;
 
 
 /**
  * Created by echerkas on 24.11.2015.
  */
 public class ClientDAOImpl extends GenericDAOImpl<ClientPO> {
+    List<ClientPO> clients;
 
-    ClientDAOImpl (EntityManager entityManager) {
-        super(entityManager);
+    public ClientDAOImpl() {
+        super();
     }
 
     public ClientPO findByName(String name) {
-        HibernateUtil.beginTransaction();
         return entityManager.createQuery("SELECT c from ClientPO c WHERE " +
                 "c.name = :name", ClientPO.class)
                 .setParameter("name", name).getSingleResult();
@@ -44,4 +43,21 @@ public class ClientDAOImpl extends GenericDAOImpl<ClientPO> {
     public ClientPO getById(Long id, ClientPO xx) {
         return entityManager.find(entityClass, id);
     }
-}
+
+    public List<ClientPO> getAllClients() {
+        return clients;
+    }
+
+//    @Override
+//    public List<T> getAll(Class xx) {
+//        TypedQuery<T> query = entityManager.createQuery("from " + xx.getName(), xx);
+//        return query.getResultList();
+//    }
+//
+//    public List<ClientPO> getAll(ClientPO xx) {
+//        TypedQuery<ClientPO> query = entityManager.createQuery("from " + xx.getName(), ClientPO <xx>);
+//        return query.getResultList();
+    }
+//        return entityManager.find(entityClass, id);
+//    }
+

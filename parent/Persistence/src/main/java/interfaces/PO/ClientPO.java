@@ -1,4 +1,4 @@
-package persistence.PO;
+package interfaces.PO;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -25,6 +25,10 @@ public class ClientPO {
     public ClientPO() {
     }
 
+    public ClientPO(String name, String surname){
+        this.name = name;
+        this.surname = surname;
+    }
 
     public Long getId() {
         return id;

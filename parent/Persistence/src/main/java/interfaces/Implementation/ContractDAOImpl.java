@@ -1,8 +1,8 @@
-package persistence.Implementation;
+package interfaces.Implementation;
 
-import persistence.DAO.ContractDAO;
-import persistence.GenericDAOImpl;
-import persistence.PO.ContractPO;
+import interfaces.DAO.ContractDAO;
+import interfaces.GenericDAOImpl;
+import interfaces.PO.ContractPO;
 
 /**
  * Created by echerkas on 24.11.2015.

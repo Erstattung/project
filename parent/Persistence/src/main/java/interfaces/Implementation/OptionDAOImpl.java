@@ -1,7 +1,7 @@
-package persistence.Implementation;
+package interfaces.Implementation;
 
-import persistence.GenericDAOImpl;
-import persistence.PO.OptionPO;
+import interfaces.GenericDAOImpl;
+import interfaces.PO.OptionPO;
 
 /**
  * Created by echerkas on 24.11.2015.

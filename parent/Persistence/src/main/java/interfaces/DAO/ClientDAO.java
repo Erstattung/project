@@ -1,7 +1,9 @@
-package persistence.DAO;
+package interfaces.DAO;
 
-import persistence.GenericDAOInterface;
-import persistence.PO.ClientPO;
+import interfaces.GenericDAOInterface;
+import interfaces.PO.ClientPO;
+
+import java.util.List;
 
 
 /**
@@ -13,5 +15,5 @@ public interface ClientDAO extends GenericDAOInterface<ClientPO> {
     public ClientPO findBySurname (String surname);
     public ClientPO findByName(String name);
     public ClientPO findByNumber(String number);
-
+    public List<ClientPO> getAllClients();
 }
