@@ -32,7 +32,7 @@ public class ContractPO {
             inverseJoinColumns={@JoinColumn(name="Option_id_option", referencedColumnName="id")})
     private Set<OptionPO> options = new HashSet<>();
 
-    public ContractPO() {
+    protected ContractPO() {
     }
 
     public ContractPO(String number, ClientPO client, TarifPO tarif) {
