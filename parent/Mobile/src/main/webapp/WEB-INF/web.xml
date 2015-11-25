@@ -6,7 +6,7 @@
 
   <servlet>
     <servlet-name>mainServlet</servlet-name>
-    <servlet-class>MainServlet</servlet-class>
+    <servlet-class>Servlets.MainServlet</servlet-class>
   </servlet>
 
   <servlet-mapping>
@@ -15,11 +15,6 @@
   </servlet-mapping>
 
 </web-app>
-
-
-
-
-
 
 
 <!--<!DOCTYPE web-app PUBLIC-->
