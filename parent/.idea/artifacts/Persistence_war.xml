@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="war" name="Persistence:war">
-    <output-path>$PROJECT_DIR$/../Persistence/target</output-path>
-    <root id="archive" name="Persistence.war">
+    <output-path>$PROJECT_DIR$/persistence/target</output-path>
+    <root id="archive" name="persistence-1.0-SNAPSHOT.war">
       <element id="artifact" artifact-name="Persistence:war exploded" />
     </root>
   </artifact>
